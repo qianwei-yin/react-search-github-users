@@ -12,30 +12,30 @@ import FusionCharts from "fusioncharts";
 import Column2D from "fusioncharts/fusioncharts.charts";
 
 // Include the theme as fusion
-import FusionTheme from "fusioncharts/themes/fusioncharts.theme.gammel";
+import FusionTheme from "fusioncharts/themes/fusioncharts.theme.candy";
 
 // Adding the chart and theme as dependency to the core fusioncharts
 ReactFC.fcRoot(FusionCharts, Column2D, FusionTheme);
 
 // STEP 4 - Creating the DOM element to pass the react-fusioncharts component
-const Bar3D = ({ data }) => {
+const Column2Di = ({ data }) => {
 	// STEP 3 - Creating the JSON object to store the chart configurations
 	const chartConfigs = {
-		type: "bar3d", // The chart type
+		type: "column2d", // The chart type
 		width: "100%", // Width of the chart
 		height: "400", // Height of the chart
 		dataFormat: "json", // Data type
 		dataSource: {
 			// Chart Configuration
 			chart: {
-				caption: "Most Forked Repo",
-				subCaption: "Forks Per Repo",
+				caption: "Most Popular Repo",
+				subCaption: "Stars Per Repo",
 				decimals: 0,
 				// doughnutRadius: "45%",
 				showPercentValues: false,
-				theme: "gammel",
+				theme: "candy",
 				xAxisName: "Repository Name",
-				yAxisName: "Forks",
+				yAxisName: "Stars",
 			},
 			// Chart Data
 			data,
@@ -45,4 +45,4 @@ const Bar3D = ({ data }) => {
 	return <ReactFC {...chartConfigs} />;
 };
 
-export default Bar3D;
+export default Column2Di;
